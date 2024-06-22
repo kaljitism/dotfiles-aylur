@@ -49,6 +49,13 @@
   # network
   networking.networkmanager.enable = true;
 
+  boot = {
+    loader = {
+      timeout = 2;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
   # bluetooth
   hardware.bluetooth = {
     enable = true;  
