@@ -61,8 +61,6 @@
     supportedFilesystems = ["ntfs"];
     loader = {
       timeout = 2;
-      grub.devices = "nodev";
-      grub.efiSupport = true;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
