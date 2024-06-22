@@ -57,6 +57,8 @@
 
   # boot
     boot = {
+    boot.loader.grub.devices = [ "/dev/nvme0n1" ];  
+    boot.loader.grub.efiSupport = true;
     tmp.cleanOnBoot = true;
     supportedFilesystems = ["ntfs"];
     loader = {
