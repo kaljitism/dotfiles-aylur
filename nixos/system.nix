@@ -57,12 +57,13 @@
 
   # boot
     boot = {
-    boot.loader.grub.devices = [ "/dev/nvme0n1" ];  
-    boot.loader.grub.efiSupport = true;
+    boot.  
+    boot.
     tmp.cleanOnBoot = true;
     supportedFilesystems = ["ntfs"];
     loader = {
-      timeout = 2;
+      grub.devices = "nodev";
+      grub.efiSupport = true;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
