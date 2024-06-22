@@ -49,16 +49,23 @@
   # network
   networking.networkmanager.enable = true;
 
-  boot = {
-    loader = {
-      timeout = 2;
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-
   # bluetooth
   hardware.bluetooth = {
     enable = true;  
     settings.General.Experimental = true; # for gnome-bluetooth percentage
   };
+
+  # boot
+    boot = {
+    tmp.cleanOnBoot = true;
+    supportedFilesystems = ["ntfs"];
+    loader = {
+      timeout = 2;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
+
+  system.stateVersion = 24.05;
+
 }
