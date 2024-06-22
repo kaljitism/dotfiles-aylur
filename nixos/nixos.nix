@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  username = "demeter";
+  username = "aditya";
 in {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -17,11 +17,10 @@ in {
   ];
 
   hyprland.enable = true;
-  asusLaptop.enable = false;
+  asusLaptop.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
-    initialPassword = username;
     extraGroups = [
       "nixosvmtest"
       "networkmanager"

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # nix
-  documentation.nixos.enable = false; # .desktop
+  documentation.nixos.enable = true; # .desktop
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = "nix-command flakes";
@@ -46,37 +46,12 @@
     HandleLidSwitchExternalPower=ignore
   '';
 
-  # kde connect
-  networking.firewall = rec {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
-
   # network
   networking.networkmanager.enable = true;
 
   # bluetooth
   hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
+    enable = true;  
     settings.General.Experimental = true; # for gnome-bluetooth percentage
   };
-
-  # bootloader
-  boot = {
-    tmp.cleanOnBoot = true;
-    supportedFilesystems = ["ntfs"];
-    loader = {
-      timeout = 2;
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
-  system.stateVersion = "23.05";
 }

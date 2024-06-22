@@ -28,14 +28,14 @@
 
     # macos hm config
     homeConfigurations = {
-      "demeter" = home-manager.lib.homeManagerConfiguration {
+      "aditya" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-darwin;
         extraSpecialArgs = {inherit inputs;};
         modules = [
           ({pkgs, ...}: {
             nix.package = pkgs.nix;
-            home.username = "demeter";
-            home.homeDirectory = "/Users/demeter";
+            home.username = "aditya";
+            home.homeDirectory = "/Users/aditya";
             imports = [./macos/home.nix];
           })
         ];
