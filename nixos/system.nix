@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # nix
-  documentation.nixos.enable = true; # .desktop
+  documentation.nixos.enable = false; # .desktop
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = "nix-command flakes";
@@ -57,11 +57,10 @@
 
   # boot
     boot = {
-    boot.  
-    boot.
     tmp.cleanOnBoot = true;
     supportedFilesystems = ["ntfs"];
     loader = {
+      timeout = 2;
       grub.devices = "nodev";
       grub.efiSupport = true;
       systemd-boot.enable = true;
